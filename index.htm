@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Lucky Draw</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- falling confetti --->
+    <canvas id="confetti"></canvas>
+
+    <div id="divMain" class="container">
+        <div id="divLuckyDraw" class="row px-3 py-4">
+            <div class="col-md-12">
+                <div class="row no-gutters">
+                    <h1 class="neon-text mx-auto">Vòng Quay <br/> May Mắn</h1>
+<!--                    <img src="images/sgc-logo.png" class="logo">-->
+                    <h3 id="h3Title" class="h-title">MINIGAME</h3>
+                    <p id="pDes" class="p-des mt-5 mb-4">
+                        Saigon Co.op và PNJ tổ chức minigame vòng quay may mắn để tri ân sự ủng hộ của quý khách hàng trong thời gian vừa qua với thể lệ chương trình như sau:
+                    </p>
+                    <button id="btnPlay" class="btn btn-lucky-raw ripple-surface d-none">Quay Số</button>
+                </div>
+                <div id="divStartContainer" class="row no-gutters px-xl-5">
+                    <div class="col-md-12">
+                        <div class="row px-xl-5">
+                            <div class="col-md-7">
+                                <p class="text-white mb-0">- &nbsp;&nbsp;Thể lệ:
+                                    Khách hàng Thành viên tham gia chương trình tích lũy hóa đơn và đổi quà trong chương trình “Tết sum vầy – trao quà như ý” từ ngày 30/12/2022 đến 12/01/2023 sẽ có thêm cơ hội nhận vàng PNJ.
+                                </p>
+<!--                                <ul class="ul-arrow">-->
+<!--                                    <li><b>&nbsp;GIẢI THƯỞNG:</b> 0.5 chỉ vàng PNJ/ khách hàng trúng thưởng.</li>-->
+<!--                                    <li><b>&nbsp;&nbsp;SỐ LƯỢNG KH TRÚNG GIẢI:</b> 47 khách hàng</li>-->
+<!--                                    <li><b>&nbsp;&nbsp;SỐ LẦN QUAY:</b> 42 lần tương đương với 42 siêu thị khu vực HCM</li>-->
+<!--                                </ul>-->
+                            </div>
+                            <div class="col-md-5">
+                                <p class="text-white mb-0">- &nbsp;&nbsp;GIẢI THƯỞNG: <b>0.5</b> chỉ vàng PNJ/ khách hàng trúng thưởng.</p>
+                                <ul class="ul-dot">
+                                    <li><b>SỐ LƯỢNG KH TRÚNG GIẢI:</b> 47 khách hàng</li>
+                                    <li><b>SỐ LẦN QUAY:</b> 42 lần tương đương với 42 siêu thị khu vực HCM</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row px-5 justify-content-center">
+                            <div class="col-md-9">
+                            <ul>
+                                <li>- &nbsp;&nbsp;Giải thưởng của chương trình được thương hiệu PNJ đảm bảo về chất lượng và định lượng.</li>
+                                <li>- &nbsp;&nbsp;Khách hàng nhận vàng sẽ do tool quay số chọn ra ngẫu nhiên và chúng tôi sẽ mời khách hàng đến nhận giải thưởng tại siêu thị. Mỗi mã thẻ khách hàng Thành viên trúng giải chỉ nhận 01 giải thưởng.</li>
+                                <li>- &nbsp;&nbsp;Thời gian kết thúc trao thưởng: trong vòng 60 ngày kể từ ngày công bố KH trúng giải.</li>
+                                <li>- &nbsp;&nbsp;Giải thưởng không có KH nhận giải sẽ được xử lý theo quy định của Pháp luật hiện hành.</li>
+                                <li>- &nbsp;&nbsp;<span class="font-weight-bold font-italic">Mọi thắc mắc vui lòng liên hệ Tổng đài CSKH: 1900.5555.68</span></li>
+                            </ul>
+                            </div>
+                        </div>
+                        <div class="row p-3">
+                            <button id="btnStart" class="btn btn-lucky-raw ripple-surface mx-auto font-weight-bold">Bắt Đầu</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="divDrawContainer" class="row no-gutters h-100 align-items-center d-none">
+<!--                    <span id="sgcSlogan" class="slogan pnj-logo"></span>-->
+                    <article class="tab-pane container" id="FirstPrize">
+                        <div class="row">
+                            <div class="col-md-9 px-0">
+                                <div class="row no-gutters">
+                                    <input type="hidden" id="hidOrder1" value="0">
+                                    <input type="hidden" id="hidContinue1" value="1">
+                                    <input type="hidden" id="hidFirstPrizeData1" value="0">
+                                    <div class="py-3"></div>
+                                    <div id="ballMachine" class="text-center"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div id="divLuckyDrawList" class="px-2">
+                                    <a class="btn ripple-surface text-white">
+                                        Mã khách hàng <br/> trúng thưởng <br/>
+                                        <span class="badge badge-light" id="spnLuckyOrder">0</span>
+                                    </a>
+                                    <div class="py-2"></div>
+                                    <div class="px-2 text-center" id="divLuckyDrawListDetail"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="divConfetti" class="container-fluid d-none">
+        <span>Từ ngày <b>15/01/2023</b> các siêu thị có khách hàng trúng giải sẽ
+            liên hệ với khách hàng trúng thưởng (qua số điện thoại khách
+            hàng đăng ký trong chương trình khách hàng Thành viên) để
+            mời khách hàng trúng thưởng lên siêu thị nhận giải.
+        </span>
+    </div>
+
+    <!-- congratulating popup --->
+    <div class="modal fade2 d-flex align-items-center justify-content-center" id="divConfettiModal" tabindex="-1" role="dialog" aria-labelledby="divConfettiModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button id="btnClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+<!--                    <img id="imgConfetti" class="img-fluid" src="images/confetti-popup.png">-->
+                    <p id="pConfetti"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- exporting popup --->
+    <div class="modal fade2 d-flex justify-content-center" id="divExportModal" tabindex="-1" role="dialog" aria-labelledby="divExportModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+<!--                    <img class="img-fluid p-3" src="images/sgc-machine.png">-->
+                    <h3 class="h-title">Tải danh sách trúng thưởng</h3>
+                    <div class="py-2"></div>
+                    <button id="btnPrize1" class="btn btn-lucky-raw ripple-surface">47 Mã Thẻ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--- music --->
+    <audio autoplay loop id="audLuckyDraw"><source src="music/sgc-music.mp3" type="audio/mp3"></audio>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.csv.min.js"></script>
+    <script src="js/slotmachine.min.js"></script>
+    <script src="js/jquery.slotmachine.min.js"></script>
+    <script src="js/random.js"></script>
+    <script src="js/luckydraw.js"></script>
+    <script src="js/sgc.main.js"></script>
+</body>
+</html>
