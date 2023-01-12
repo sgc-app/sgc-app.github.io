@@ -281,18 +281,20 @@ $(function(){
 
     // run lucky draw machine
     $("#btnPlay").click(function() {
-        if(indexedStore > 0){
-            store = parseInt(supermarkets[indexedStore]);
-            storeName = orderSuper[supermarkets[indexedStore]]
-            $("#spnOrder").text(indexedStore+1);
-            $("#spnDes").text(storeName);
-            $("#hidOrder1").val(1);
-            $("#spnLuckyOrder").text("0");
-            $("#divLuckyDrawListDetail").html("");
-        }
-        else{
-            $("#hidOrder1").val(1);
-        }
+        // if(indexedStore > 0){
+        //     store = parseInt(supermarkets[indexedStore]);
+        //     storeName = orderSuper[supermarkets[indexedStore]]
+        //     $("#spnOrder").text(indexedStore+1);
+        //     $("#spnDes").text(storeName);
+        //     $("#hidOrder1").val(1);
+        //     $("#spnLuckyOrder").text("0");
+        //     $("#divLuckyDrawListDetail").html("");
+        // }
+        // else{
+        //     $("#hidOrder1").val(1);
+        // }
+
+        $("#hidOrder1").val(1);
 
         var count = 1 // number of rotations
         if($.inArray(store, specifiedStores) >= 0){count = 2;}
@@ -327,6 +329,15 @@ $(function(){
 
     // close confetti
     $("#btnClose").click(function () {
+        if(indexedStore <= 41){
+            store = parseInt(supermarkets[indexedStore]);
+            storeName = orderSuper[supermarkets[indexedStore]]
+            $("#spnOrder").text(indexedStore+1);
+            $("#spnDes").text(storeName);
+            $("#spnLuckyOrder").text("0");
+            $("#divLuckyDrawListDetail").html("");
+        }
+
         $("#confetti").css("display", "none");
         $("#divConfettiModal").css("z-index", 1);
         clearTimeout(confetti);
