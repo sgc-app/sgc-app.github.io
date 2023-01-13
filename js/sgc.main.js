@@ -281,7 +281,8 @@ $(function(){
 
     // run lucky draw machine
     $("#btnPlay").click(function() {
-        // if(indexedStore > 0){
+        if(indexedStore > 0){
+            $("#myCanvas2").css("visibility", "visible")
         //     store = parseInt(supermarkets[indexedStore]);
         //     storeName = orderSuper[supermarkets[indexedStore]]
         //     $("#spnOrder").text(indexedStore+1);
@@ -289,7 +290,7 @@ $(function(){
         //     $("#hidOrder1").val(1);
         //     $("#spnLuckyOrder").text("0");
         //     $("#divLuckyDrawListDetail").html("");
-        // }
+        }
         // else{
         //     $("#hidOrder1").val(1);
         // }
@@ -330,6 +331,7 @@ $(function(){
     // close confetti
     $("#btnClose").click(function () {
         if(indexedStore <= 41){
+            $("#myCanvas2").css("visibility", "hidden")
             store = parseInt(supermarkets[indexedStore]);
             storeName = orderSuper[supermarkets[indexedStore]]
             $("#spnOrder").text(indexedStore+1);
