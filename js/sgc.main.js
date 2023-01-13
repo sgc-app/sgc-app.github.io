@@ -251,7 +251,7 @@ $(function(){
     var specifiedStores = [159, 161, 196, 570, 305] // store with 2 rotations
 
     var store = 159
-    var storeName = "Huỳnh Tấn Phát"
+    var storeName = "Co.opmart Huỳnh Tấn Phát"
     var winList = [];
     var lotteList = [];
     $("#ballMachine").lotteryMachine({
@@ -270,8 +270,8 @@ $(function(){
                 $("#hidOrder1").val(order+1);
             }
             else{
-                if(winList.length > 1) $("#pConfetti").html("<span>Mã KH: "+winList[0]+"</span> <span> và "+winList[1]+"</span> <br> <span>KH nhận giải tại <br> Co.opmart "+storeName+"</span>");
-                else $("#pConfetti").html("<span>Mã KH: "+winList[0]+"</span> <br> <span>KH nhận giải tại <br> Co.opmart "+storeName+"</span>");
+                if(winList.length > 1) $("#pConfetti").html("<span>Mã KH: "+winList[0]+"</span> <span> và "+winList[1]+"</span> <br> <span>KH nhận giải tại <br> "+storeName+"</span>");
+                else $("#pConfetti").html("<span>Mã KH: "+winList[0]+"</span> <br> <span>KH nhận giải tại <br> "+storeName+"</span>");
                 showConfettiPopup(3000);
                 indexedStore += 1;
                 winList = [];
