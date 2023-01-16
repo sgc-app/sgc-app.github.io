@@ -231,7 +231,7 @@ $(function(){
         524:"Co.opmart Đồng Văn Cống",
         530:"Co.opmart Chu Văn An",
         541:"Co.opmart Saigon Homes",
-        548:"Co.opmart Crescent mall",
+        548:"Co.opXtra Crescent mall",
         549:"Co.opmart Hoàng Văn Thụ",
         556:"Co.opmart Tô Ký",
         559:"Co.opmart Âu Cơ",
