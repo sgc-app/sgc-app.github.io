@@ -281,16 +281,16 @@ $(function(){
 
     // run lucky draw machine
     $("#btnPlay").click(function() {
-        if(indexedStore > 0){
-            $("#myCanvas2").css("visibility", "visible")
-        //     store = parseInt(supermarkets[indexedStore]);
-        //     storeName = orderSuper[supermarkets[indexedStore]]
-        //     $("#spnOrder").text(indexedStore+1);
-        //     $("#spnDes").text(storeName);
-        //     $("#hidOrder1").val(1);
-        //     $("#spnLuckyOrder").text("0");
-        //     $("#divLuckyDrawListDetail").html("");
-        }
+        // if(indexedStore > 0){
+            // $("#myCanvas2").css("visibility", "visible")
+            // store = parseInt(supermarkets[indexedStore]);
+            // storeName = orderSuper[supermarkets[indexedStore]]
+            // $("#spnOrder").text(indexedStore+1);
+            // $("#spnDes").text(storeName);
+            // $("#hidOrder1").val(1);
+            // $("#spnLuckyOrder").text("0");
+            // $("#divLuckyDrawListDetail").html("");
+        // }
         // else{
         //     $("#hidOrder1").val(1);
         // }
@@ -308,7 +308,7 @@ $(function(){
         }
 
         var customer_list;
-        $.get(base_url+"data/customer_supermarket.csv", function(csv) {
+        $.get(base_url+"data/customer_supermarket_01162023.csv", function(csv) {
             customer_list = $.csv.toArrays(csv, {
                 onParseValue: $.csv.hooks.castToScalar
             });
@@ -331,7 +331,10 @@ $(function(){
     // close confetti
     $("#btnClose").click(function () {
         if(indexedStore <= 41){
-            $("#myCanvas2").css("visibility", "hidden")
+            // $("#myCanvas2").css("visibility", "hidden")
+            var ctx = document.getElementById("myCanvas2")
+            ctx.width = ctx.width
+
             store = parseInt(supermarkets[indexedStore]);
             storeName = orderSuper[supermarkets[indexedStore]]
             $("#spnOrder").text(indexedStore+1);
